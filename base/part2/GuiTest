@@ -1,0 +1,19 @@
+import tkinter
+
+# tkinter._test()
+
+listBox1 = tkinter.Listbox()
+listBox2 = tkinter.Listbox()
+
+list1 = ["a", "b", "c"]
+
+list2 = [1, 2, 3, 4]
+
+for i1 in list1:
+    listBox1.insert(0, i1)
+
+for i2 in list2:
+    listBox2.insert(0, i2)
+
+listBox1.pack()
+listBox2.pack()

@@ -1,0 +1,28 @@
+class BuiltClassPropertyTest:
+    "调用内置函数__doc__看到此句话"
+    value1 = "属性1"
+
+    def __init__(self):
+        "当前类的初始化函数"
+        self.value2 = "属性2"
+        pass
+
+    def method1(self):
+        print("当前类中函数1")
+
+
+# 打印对象名称,不可用实例调用,如：BuiltClassPropertyTest().__name__
+print(BuiltClassPropertyTest.__name__)
+# 打印对象的文档信息
+print(BuiltClassPropertyTest.__doc__)
+# 打印对象的类型
+print(BuiltClassPropertyTest.__class__)
+# 打印对象所处的模块
+print(BuiltClassPropertyTest.__module__)
+# 打印对象的基础
+print(BuiltClassPropertyTest.__base__)
+
+# 如果是类(非实例)调用,将会将当前类内外置属性、函数的内存地址打印出来
+# 如果是实例调用，会将实例的属性转为dict形式输出,不会输出未在__init__函数中的属性
+print(BuiltClassPropertyTest.__dict__)
+print(BuiltClassPropertyTest().__dict__)

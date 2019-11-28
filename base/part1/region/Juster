@@ -1,0 +1,21 @@
+class Juster:
+    """测试私有化内容
+
+    1、__foo__ 定义特殊方法，一般是系统定义的名字
+    2、_attr 表示protected 只能父子之间访问
+    3、__attr 表示私有化 外部无法直接访问属性   """
+
+    __idCard = 0
+    name = ""
+
+    def __init__(self):
+        self.name = "tom"
+        self.__idCard = "123123"
+
+
+juster = Juster()
+print(juster.name)
+# print(juster.__idCard),报错 无法直接访问私有成员变量
+# 但是 可以通过 obj._className__privateAttr 这种形式访问到私有属性
+print(juster._Juster__idCard)
+print(Juster.__doc__)

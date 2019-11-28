@@ -1,0 +1,32 @@
+from base.part1.extend.Parent1 import Parent1
+from base.part1.extend.Parent2 import Parent2
+
+
+class Son(Parent1, Parent2):
+    "子类"
+
+    def __str__(self):
+        return "Son(%s)" % self._sonValue
+
+    def __init__(self, sonValue=0):
+        print("Son init")
+        self._sonValue = sonValue
+
+    def __add__(self, other):
+        return Son(self._sonValue + other._sonValue)
+
+    def sonMethod(self):
+        print("son的函数")
+
+    def setValueTo10(self):
+        self._sonValue = 10
+
+    def getValue(self):
+        return self._sonValue
+
+obj = Son()
+obj2 = Son(2)
+print((obj + obj2).getValue())
+obj.setValueTo10()
+obj.parent1Method()
+print(obj.getValue())

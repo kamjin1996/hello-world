@@ -1,0 +1,23 @@
+
+# dict 字典的5种创建方式
+a = dict(one=1, two=2, three=3)
+b = dict(zip(["one", "two", "three"], [1, 2, 3]))
+c = dict([("one", 1), ("two", 2), ("three", 3)])
+d = dict({"one": 1, "two": 2, "three": 3})
+e = {"one": 1, "two": 2, "three": 3}
+print(a == b == c == d == e)  # True
+
+
+# newDict
+def newDict():
+    return {"one": None, "two": 2}
+
+
+newDict = newDict()
+print(len(newDict))
+print(list(newDict))
+print(list(newDict.values()))
+print("one的值：", newDict.get("one"))
+print("one的值：", newDict["one"])
+#此种获取方式将会抛出异常
+# print("three的值：", newDict["three"])
